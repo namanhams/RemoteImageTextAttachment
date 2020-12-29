@@ -1,6 +1,6 @@
 //
 //  RemoteImageTextAttachment.swift
-//  AttributedStringRemoteImage
+//  RemoteImageTextAttachment
 //
 //  Created by Hoang Le Pham on 26/11/2020.
 //  Copyright © 2020 Pham Le. All rights reserved.
@@ -10,11 +10,14 @@ import UIKit
 
 public class RemoteImageTextAttachment: NSTextAttachment {
   
-  public let imageUrl: URL
-  
+  // The label that this attachment is being added to
   public weak var label: UILabel?
+  
+  // The size to display the image. If nil, the image's size will be used
   public var displaySize: CGSize?
+  
   public var downloadQueue: DispatchQueue?
+  public let imageUrl: URL
   
   private weak var textContainer: NSTextContainer?
   private var isDownloading = false
@@ -41,7 +44,8 @@ public class RemoteImageTextAttachment: NSTextAttachment {
     }
     
     // If we return .zero, the image(forBounds:textContainer:characterIndex:) function won't be called
-    return CGRect(origin: .zero, size: CGSize(width: 1, height: 1))
+    let placeholderSize = CGSize(width: 1, height: 1)
+    return CGRect(origin: .zero, size: placeholderSize)
   }
   
   override public func image(forBounds imageBounds: CGRect, textContainer: NSTextContainer?, characterIndex charIndex: Int) -> UIImage? {
