@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "RemoteImageTextAttachment"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "NSTextAttachment with remote image URL"
   spec.description  = "Allows usage of remote image URL in NSTextAttachment"
 
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.swift_versions = '5.0'
 
-  spec.source       = { :git => "https://github.com/namanhams/RemoteImageTextAttachment.git", :tag => spec.version }
+  spec.source       = { :git => "https://github.com/namanhams/RemoteImageTextAttachment.git" }
   spec.source_files  = "RemoteImageTextAttachment/RemoteImageTextAttachment.swift"
 
 end
